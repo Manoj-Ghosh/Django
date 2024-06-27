@@ -27,7 +27,11 @@ monthly_challenges_dict = {
 
 def monthly_challenges_by_number(request, month):
     months = list(monthly_challenges_dict.keys())
-    redirected_month = months[month]
+
+    if month > len(months):
+        return HttpResponseNotFound(" Invalid month ...")
+    
+    redirected_month = months[month - 1]
 
     challenge_text = monthly_challenges_dict[redirected_month]
     return HttpResponseRedirect("/challenges/" + redirected_month)
