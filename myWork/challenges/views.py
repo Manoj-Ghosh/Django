@@ -13,6 +13,9 @@ def february(request):
 def march(request):
     return HttpResponse("this is march ")'''
 
+def monthly_challenges_by_number(request, month):
+    return HttpResponse(month)
+
 def monthly_challenges(request, month):
     challenge_text = None
 
