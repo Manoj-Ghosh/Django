@@ -13,13 +13,33 @@ def february(request):
 def march(request):
     return HttpResponse("this is march ")'''
 
+monthly_challenges_dict = {
+    "january": "this is january",
+    "february": " this is february",
+    "march": " this is march",
+    "april" : "this is april",
+    "may": " this is may",
+    "june": "this is june"
+}
+
+
+
+
 def monthly_challenges_by_number(request, month):
     return HttpResponse(month)
 
 def monthly_challenges(request, month):
-    challenge_text = None
 
-    if month == "january":
+    try:
+        challenge_text = monthly_challenges_dict[month]
+        return HttpResponse(challenge_text)
+
+    except:
+        return HttpResponseNotFound("this month not supported...")
+
+
+
+    '''if month == "january":
         challenge_text = " this is january"
 
     elif month == "february":
@@ -34,6 +54,6 @@ def monthly_challenges(request, month):
     else:
         return HttpResponseNotFound("This month not supported")
 
-    return HttpResponse(challenge_text)
+    return HttpResponse(challenge_text)'''
 
 
