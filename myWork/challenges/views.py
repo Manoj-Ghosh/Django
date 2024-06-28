@@ -45,10 +45,11 @@ def monthly_challenges(request, month):
 
     try:
         challenge_text = monthly_challenges_dict[month]
-        return HttpResponse(challenge_text)
+        response_data = f"<h1> {challenge_text} </h1>"
+        return HttpResponse(response_data)
 
     except:
-        return HttpResponseNotFound("this month not supported...")
+        return HttpResponseNotFound("<h1>this month not supported...</h1>")
 
 
 
