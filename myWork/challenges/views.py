@@ -15,6 +15,21 @@ def february(request):
 def march(request):
     return HttpResponse("this is march ")'''
 
+def index(request):
+
+    list_item = ""
+
+    months = list(monthly_challenges_dict.keys())
+
+    for month in months:
+        capitalized_month = month.capitalize()
+        month_path = reverse("month-challenge", args= [month])
+        list_item += f"<li><a href = \"{month_path}\"> {capitalized_month}</a></li>"
+
+    response_data = f"<ul>{list_item} </ul>"
+    
+    return HttpResponse(response_data)
+
 monthly_challenges_dict = {
     "january": "this is january",
     "february": " this is february",
