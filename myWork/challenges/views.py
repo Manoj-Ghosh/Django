@@ -64,7 +64,9 @@ def monthly_challenges(request, month):
     try:
         challenge_text = monthly_challenges_dict[month]
         #response_data = f"<h1> {challenge_text} </h1>"
-        return render(request, "challenges/challenge.html")
+        return render(request, "challenges/challenge.html", {
+            "text" : challenge_text
+        })
     
         #response_data = render_to_string("challenges/challenge.html")
         #return HttpResponse(response_data)
