@@ -31,7 +31,10 @@ def index(request):
 
     response_data = f"<ul>{list_item} </ul>"
     
-    return HttpResponse(response_data)
+    #return HttpResponse(response_data)
+    return render(request, "challenges/index.html", {
+        "months": months
+    })
 
 monthly_challenges_dict = {
     "january": "this is january",
