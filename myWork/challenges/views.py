@@ -42,7 +42,8 @@ monthly_challenges_dict = {
     "march": " this is march",
     "april" : "this is april",
     "may": " this is may",
-    "june": "this is june"
+    "june": "this is june",
+    "december": None
 }
 
 
