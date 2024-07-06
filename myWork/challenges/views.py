@@ -4,6 +4,8 @@ from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 from django.urls import reverse
 
+from django.template.loader import render_to_string
+
 #from django.template.loader import render_to_string
 
 
@@ -77,7 +79,8 @@ def monthly_challenges(request, month):
         #return HttpResponse(response_data)
 
     except:
-        return HttpResponseNotFound("<h1>this month not supported...</h1>")
+        response_data = render_to_string( "404.html")
+        return HttpResponseNotFound(response_data)
 
 
 
