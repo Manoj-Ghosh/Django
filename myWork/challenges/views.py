@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, Http404
 
 from django.urls import reverse
 
@@ -79,9 +79,9 @@ def monthly_challenges(request, month):
         #return HttpResponse(response_data)
 
     except:
-        response_data = render_to_string( "404.html")
-        return HttpResponseNotFound(response_data)
-
+        #response_data = render_to_string( "404.html")
+        #return HttpResponseNotFound(response_data)
+        raise Http404()
 
 
     '''if month == "january":
