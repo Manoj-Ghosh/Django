@@ -1,5 +1,11 @@
 {%  extends "base.html" %}
 
+{% load static %}
+{% block css_files%}
+    <link rel = "stylesheet" href = "{% static "challenges/challenge.css"%}">
+    <link rel = "stylesheet" href = "{% static "Challenges/includes/header.css"%}">
+{% endblock %}
+
 <!--<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +35,7 @@
         <h2>{{ text | title }}</h2>
     {% else %}
 
-        <p> There is no challenge for this month </p>
+        <p class = "fallback"> There is no challenge for this month </p>
 
     {% endif %}
     

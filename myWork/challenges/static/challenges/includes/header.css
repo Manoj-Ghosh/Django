@@ -12,3 +12,16 @@ header nav {
     justify-content: center;
     align-items: center;
 }
+
+header nav a {
+    color: aqua;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+header nav a:hover,
+header nav a:active {
+    color: #6212ae;
+}
